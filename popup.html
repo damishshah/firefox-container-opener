@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Container Tab Opener</title>
+  <style>
+    body {
+      width: 320px;
+      margin: 0;
+      padding: 18px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #222;
+      background: #fff;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 17px;
+      margin: 0 0 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin: 12px 0 6px;
+    }
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 9px 10px;
+      border: 1px solid #bbb;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    input:focus {
+      outline: 2px solid #4c9ffe;
+      outline-offset: 1px;
+      border-color: #4c9ffe;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .row > div {
+      flex: 1;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 18px;
+      padding: 10px;
+      border: 0;
+      border-radius: 6px;
+      background: #0060df;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0250bb;
+    }
+
+    button:disabled {
+      background: #aaa;
+      cursor: default;
+    }
+
+    #status {
+      margin-top: 12px;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #555;
+    }
+
+    .error {
+      color: #c00 !important;
+    }
+
+    .success {
+      color: #087f23 !important;
+    }
+
+    .hint {
+      margin-top: 5px;
+      font-size: 11px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Open Container Tabs</h1>
+
+  <label for="url">Website</label>
+  <input
+    id="url"
+    type="text"
+    placeholder="https://example.com"
+    autocomplete="off"
+    spellcheck="false"
+  >
+
+  <div class="row">
+    <div>
+      <label for="count">Number of tabs</label>
+      <input
+        id="count"
+        type="number"
+        min="1"
+        max="100"
+        value="5"
+      >
+    </div>
+  </div>
+
+  <div class="hint">
+    Each tab gets its own Firefox container.
+  </div>
+
+  <button id="open">Open Container Tabs</button>
+
+  <div id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
+
